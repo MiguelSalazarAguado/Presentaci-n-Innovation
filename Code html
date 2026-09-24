@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIOEJECUTORES - Team Profile & Synergy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Force exact color reproduction for print and PDF generation */
+    *, *::before, *::after {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    @page {
+      size: A4 landscape;
+      margin: 0mm;
+    }
+    @media print {
+      html, body {
+        width: 297mm !important;
+        height: 210mm !important;
+        max-height: 210mm !important;
+        background-color: #030712 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      #slide-wrapper {
+        width: 297mm !important;
+        height: 210mm !important;
+        max-height: 210mm !important;
+        padding: 10mm 14mm !important;
+        background-color: #030712 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        box-sizing: border-box !important;
+      }
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-[#030712] text-slate-100 min-h-screen font-sans selection:bg-indigo-500 selection:text-white antialiased">
+
+  <!-- Floating 1-Click PDF Download Button (Hidden in Print/Export) -->
+  <div class="no-print fixed bottom-5 right-5 z-50 flex items-center gap-2">
+    <button onclick="downloadAsPDF()" id="pdf-btn" class="flex items-center gap-2 px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white text-xs font-semibold rounded-xl shadow-2xl transition duration-150 border border-indigo-400/40 backdrop-blur-sm cursor-pointer">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+      </svg>
+      <span>Download PDF (Exact Dark Theme)</span>
+    </button>
+  </div>
+
+  <!-- Background decorative glows -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/3 -right-40 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl"></div>
+  </div>
+
+  <div id="slide-wrapper" class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-5 bg-[#030712]">
+    
+    <!-- Top Action Bar / Header -->
+    <header class="border-b border-slate-800/80 pb-3 flex items-center justify-between">
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white flex items-center gap-3">
+          BIOEJECUTORES
+        </h1>
+        <p class="text-slate-400 text-xs sm:text-sm mt-0.5">
+          Team Strengths, Weaknesses & Work Environment Friction Analysis
+        </p>
+      </div>
+      <span class="text-xs px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-400 font-mono">
+        6 Active Members
+      </span>
+    </header>
+
+    <!-- PRIMARY TABLE VIEW -->
+    <section class="space-y-3">
+      <div class="bg-[#0b1329] border border-slate-800 rounded-xl overflow-hidden shadow-2xl">
+        <div class="overflow-x-auto custom-scrollbar">
+          <table class="w-full text-left text-xs sm:text-sm text-slate-300">
+            <thead class="bg-[#070d1e] text-[11px] uppercase tracking-wider text-slate-400 border-b border-slate-800 font-bold">
+              <tr>
+                <th scope="col" class="py-3 px-5">Member</th>
+                <th scope="col" class="py-3 px-5">Color Category</th>
+                <th scope="col" class="py-3 px-5">Personality Role</th>
+                <th scope="col" class="py-3 px-5">Strengths</th>
+                <th scope="col" class="py-3 px-5">Weaknesses / Watchpoints</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 font-normal">
+              
+              <!-- Nuño -->
+              <tr class="hover:bg-slate-800/40 transition-colors bg-[#0b1329]">
+                <td class="py-3 px-5 font-bold text-white whitespace-nowrap">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    Nuño Martínez
+                  </div>
+                </td>
+                <td class="py-3 px-5 whitespace-nowrap">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-950 text-emerald-400 border border-emerald-700/80">
+                    Green
+                  </span>
+                </td>
+                <td class="py-3 px-5 font-semibold text-emerald-300">Campaigner</td>
+                <td class="py-3 px-5">Creativity, sociability, and improving the team's working environment</td>
+                <td class="py-3 px-5">
+                  <span class="text-amber-300 font-medium">Prone to becoming unfocused</span>
+                </td>
+              </tr>
+
+              <!-- Jorge -->
+              <tr class="hover:bg-slate-800/40 transition-colors bg-[#0b1329]">
+                <td class="py-3 px-5 font-bold text-white whitespace-nowrap">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                    Jorge María Pérez
+                  </div>
+                </td>
+                <td class="py-3 px-5 whitespace-nowrap">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-purple-950 text-purple-400 border border-purple-700/80">
+                    Purple
+                  </span>
+                </td>
+                <td class="py-3 px-5 font-semibold text-purple-300">Logician</td>
+                <td class="py-3 px-5">Thirst for knowledge, abstract thinking, and creative problem resolution</td>
+                <td class="py-3 px-5">
+                  <span class="text-amber-300 font-medium">Overly critical or easily disconnected</span>
+                </td>
+              </tr>
+
+              <!-- Miguel -->
+              <tr class="hover:bg-slate-800/40 transition-colors bg-[#0b1329]">
+                <td class="py-3 px-5 font-bold text-white whitespace-nowrap">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                    Miguel Salazar
+                  </div>
+                </td>
+                <td class="py-3 px-5 whitespace-nowrap">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-purple-950 text-purple-400 border border-purple-700/80">
+                    Purple
+                  </span>
+                </td>
+                <td class="py-3 px-5 font-semibold text-purple-300">Architect</td>
+                <td class="py-3 px-5">Curiosity for deeper knowledge, strategic analysis, and effective solution discovery</td>
+                <td class="py-3 px-5">
+                  <span class="text-amber-300 font-medium">Hypercritical tendencies and risk of detachment</span>
+                </td>
+              </tr>
+
+              <!-- María -->
+              <tr class="hover:bg-slate-800/40 transition-colors bg-[#0b1329]">
+                <td class="py-3 px-5 font-bold text-white whitespace-nowrap">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                    María Elvira
+                  </div>
+                </td>
+                <td class="py-3 px-5 whitespace-nowrap">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-purple-950 text-purple-400 border border-purple-700/80">
+                    Purple
+                  </span>
+                </td>
+                <td class="py-3 px-5 font-semibold text-purple-300">Commander</td>
+                <td class="py-3 px-5">Decisive troubleshooting, relentless thirst for answers, and analytical drive</td>
+                <td class="py-3 px-5">
+                  <span class="text-amber-300 font-medium">Can be overly critical or disconnected</span>
+                </td>
+              </tr>
+
+              <!-- Mariam -->
+              <tr class="hover:bg-slate-800/40 transition-colors bg-[#0b1329]">
+                <td class="py-3 px-5 font-bold text-white whitespace-nowrap">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                    Mariam El Khamliche
+                  </div>
+                </td>
+                <td class="py-3 px-5 whitespace-nowrap">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-950 text-blue-400 border border-blue-700/80">
+                    Blue
+                  </span>
+                </td>
+                <td class="py-3 px-5 font-semibold text-blue-300">Consul</td>
+                <td class="py-3 px-5">Strong administrative competence, logistical coordination, and helpful support</td>
+                <td class="py-3 px-5">
+                  <span class="text-amber-300 font-medium">Prone to impatience with process delays</span>
+                </td>
+              </tr>
+
+              <!-- Pablo -->
+              <tr class="hover:bg-slate-800/40 transition-colors bg-[#0b1329]">
+                <td class="py-3 px-5 font-bold text-white whitespace-nowrap">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                    Pablo León de Santos
+                  </div>
+                </td>
+                <td class="py-3 px-5 whitespace-nowrap">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-950 text-blue-400 border border-blue-700/80">
+                    Blue
+                  </span>
+                </td>
+                <td class="py-3 px-5 font-semibold text-blue-300">Executive</td>
+                <td class="py-3 px-5">Practical management, systematic execution, and reliable assistance to peers</td>
+                <td class="py-3 px-5">
+                  <span class="text-amber-300 font-medium">Impatience when workflows lack agility</span>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- POTENTIAL FRICTION & DYNAMICS ANALYSIS -->
+    <section class="bg-[#0b1329] border border-slate-800 rounded-xl p-4 sm:p-5 shadow-2xl relative overflow-hidden">
+      <div class="flex items-center gap-2.5 mb-2.5">
+        <div class="p-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+          </svg>
+        </div>
+        <h3 class="text-sm sm:text-base font-bold text-white tracking-tight">
+          Potential Team Disagreements & Working Environment Friction
+        </h3>
+      </div>
+
+      <div class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+        <p>
+          Potential team friction primarily stems from the contrast between rapid operational delivery and deep intellectual exploration. While Mariam and Pablo (<span class="text-blue-400 font-semibold">Blue</span>) prioritize structured organization and prompt execution—making them prone to <strong class="text-white">impatience</strong> when discussions stall—Jorge, Miguel, and María (<span class="text-purple-400 font-semibold">Purple</span>) favor exhaustive debate and scrutiny, which can cause them to become <strong class="text-white">overly critical, detached, or slow the delivery pace</strong>. Meanwhile, Nuño's (<span class="text-emerald-400 font-semibold">Green</span>) tendency to become <strong class="text-white">unfocused</strong> can frustrate the Blue members seeking structured progress and invite sharp critique from Purple analysts; mitigating this requires clear milestones, explicit task ownership, and concise feedback loops.
+        </p>
+      </div>
+    </section>
+
+    <!-- Presentation Footnote -->
+    <footer class="pt-2 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-500">
+      <span>BIOEJECUTORES Deliverable &bull; Team Profile Matrix</span>
+      <span>Academic & Team Dynamic Review &bull; English</span>
+    </footer>
+
+  </div>
+
+  <!-- Direct PDF generation script -->
+  <script>
+    function downloadAsPDF() {
+      const btn = document.getElementById('pdf-btn');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<span>Rendering PDF...</span>';
+      btn.disabled = true;
+
+      const element = document.getElementById('slide-wrapper');
+      
+      const opt = {
+        margin:       [0, 0, 0, 0],
+        filename:     'BIOEJECUTORES_Team_Profile.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { 
+          scale: 2, 
+          useCORS: true, 
+          backgroundColor: '#030712',
+          scrollX: 0,
+          scrollY: 0
+        },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'landscape' }
+      };
+
+      html2pdf().set(opt).from(element).save().then(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      }).catch(err => {
+        console.error(err);
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        window.print();
+      });
+    }
+  </script>
+</body>
+</html>
